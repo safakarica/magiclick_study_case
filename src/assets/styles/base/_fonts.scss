@@ -1,0 +1,39 @@
+@mixin font-face($style-name, $family, $category:"") {
+    $filepath: "../fonts/" + $family;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'),  
+        url($filepath + ".svg#" + $style-name + "") format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@include font-face('Roboto-Bold', 'Roboto-Bold', 'serif');
+@include font-face('Roboto-Regular', 'Roboto-Regular', 'serif');
+@include font-face('Roboto-Medium', 'Roboto-Medium', 'serif');
+@include font-face('Roboto-Light', 'Roboto-Light', 'serif');
+@include font-face('Roboto-Black', 'Roboto-Black', 'serif');
+
+@mixin font-bold {
+    font-family: 'Roboto-Bold', arial, helvetica, sans-serif;
+    font-weight: normal;
+}
+@mixin font-semibold {
+    font-family: 'Roboto-Medium', arial, helvetica, sans-serif;
+    font-weight: normal;
+}
+@mixin font-light {
+    font-family: 'Roboto-Light', arial, helvetica, sans-serif;
+    font-weight: normal;
+}
+@mixin font-regular {
+    font-family: 'Roboto-Regular', arial, helvetica, sans-serif;
+    font-weight: normal;
+}
+@mixin font-black {
+    font-family: 'Roboto-Black', arial, helvetica, sans-serif;
+    font-weight: normal;
+}
